@@ -3,6 +3,9 @@ h1,h2,h3 {
 }
 .content {
     width: 90vw;
+    margin: 0 auto;
+}
+.block {
     display: flex;
 }
 .left {
@@ -15,6 +18,7 @@ h1,h2,h3 {
     padding: 10px;
     width: 30%;
     background-color: rgba(96, 27, 246, 0.52);
+    margin: 0 auto;
 }
 .right {
     padding: 10px;

@@ -1,0 +1,23 @@
+h1,h2,h3 {
+    color: green;
+}
+.content {
+    width: 90vw;
+    display: flex;
+}
+.left {
+    padding: 10px;
+    width: 30%;
+    float: left;
+    background-color: rgba(155, 55, 105, 0.1);
+}
+.center {
+    padding: 10px;
+    width: 30%;
+    background-color: rgba(96, 27, 246, 0.52);
+}
+.right {
+    padding: 10px;
+    width: 30%;
+    background-color: rgba(210, 243, 24, 0.568);
+}

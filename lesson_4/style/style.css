@@ -5,8 +5,38 @@ h1,h2,h3 {
     width: 90vw;
     margin: 0 auto;
 }
+header {
+    background-color: #c3c2c98a;
+    padding: 10px 0px;
+}
+.header {
+    display: flex;
+    padding: 0 10px;
+}
+.logo {
+    float: left;
+}
+img {
+    cursor: pointer;
+}
+.content h1 {
+    margin: 0 auto;
+}
+.content img {
+    display: block;
+    margin: 0 auto;
+}
 .block {
     display: flex;
+}
+.left ul
+,.center ol
+,.right ul {
+    margin: 0 auto;
+    width: 250px;
+}
+.block h3 {
+    text-align: center;
 }
 .left {
     padding: 10px;
@@ -25,3 +55,24 @@ h1,h2,h3 {
     width: 30%;
     background-color: rgba(210, 243, 24, 0.568);
 }
+@media (max-width:800px) {
+    body {
+        margin: 0;
+    }
+    .content {
+        width: 90%;
+        /*padding: 10px;*/
+        margin: 0 auto;
+    }
+    .block {
+        display: block;
+        margin: 0;
+    }
+    .left,.center,.right {
+        width: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+        float: none;
+    }
+
+} 

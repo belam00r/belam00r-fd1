@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.box {
+    margin: 20px;
+    width: 0px;
+    height: 0px;
+    border-top: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgb(115, 17, 226);
+    border-left: 20px solid transparent;
+}
+
+.box_2 {
+    margin: 20px;
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid rgb(115, 17, 226);
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+}

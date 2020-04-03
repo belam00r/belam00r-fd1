@@ -26,3 +26,27 @@ body {
     border-bottom: 20px solid transparent;
     border-left: 20px solid transparent;
 }
+
+.container {
+    border: 2px solid blue;
+    padding: 5px 4px 5px 2px;
+    width: 400px;
+    color: green;
+    margin: 5px;
+}
+
+.container p {
+    border: 2px solid red;
+    width: 250px;
+}
+
+.container ul {
+    border: 2px solid green;
+    margin-right: 7px;
+}
+
+.container li {
+    border: 2px solid #d41575;
+    margin: 3px 20px;
+    width: 70%;
+}

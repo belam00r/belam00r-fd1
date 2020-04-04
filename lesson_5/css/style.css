@@ -50,3 +50,75 @@ body {
     margin: 3px 20px;
     width: 70%;
 }
+
+.inner__pen {
+    margin: 20%;
+    position: relative;
+}
+
+.pen {
+    width: 70%;
+    height: 20px;
+    border-top: 15px;
+    border-bottom: 15px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: #ffff00;
+    border-style: solid;
+    background-color: #cccc00;
+}
+
+.pen_2 {
+    width: 0px;
+    height: 0px;
+    border-top: 31px solid transparent;
+    border-bottom: 31px solid transparent;
+    border-right: 31px solid transparent;
+    border-left: 57px solid #a52a2a;
+    border-radius: 30px;
+    position: absolute;
+    left: calc(70% - 11px);
+    bottom: -6px;
+}
+
+.pen_3 {
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-left: 27px solid #000000;
+    border-radius: 30px;
+    position: absolute;
+    left: calc(70% + 19px);
+    top: 10px;
+}
+
+.conteiner {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.music h1 {
+    border: 3px dashed red;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.music_ul {
+    margin-top: 20px;
+    border-top: 1px dotted black;
+    border-bottom: 3px solid green;
+    border-left: 1px solid blue;
+    border-right: 3px double pink;
+}
+
+.music_ul li {
+    list-style: square;
+}
+
+.music_p {
+    border: 1px solid green;
+    /*width: 70%;*/
+    width: 800px;
+}

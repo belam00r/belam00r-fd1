@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .content {
+            max-width: 300px;
+        }
+        
+        .text_align {
+            border: 1px solid red;
+            padding: 5px;
+            margin: 10px;
+            text-align: left;
+        }
+        
+        .content .text_align:nth-child(2) {
+            text-align: center;
+        }
+        
+        .content .text_align:nth-child(3) {
+            text-align: right;
+        }
+        
+        .content .text_align:nth-child(4) {
+            text-align: justify;
+        }
+        
+        .vertical_align {
+            border: 1px solid green;
+            padding: 5px;
+            margin: 10px;
+        }
+        
+        .vertical_align span {
+            font-size: 70px;
+        }
+        
+        .content .vertical_align:nth-child(2) img {
+            vertical-align: top;
+        }
+        
+        .content .vertical_align:nth-child(3) img {
+            vertical-align: bottom;
+        }
+        
+        .content .vertical_align:nth-child(4) img {
+            vertical-align: baseline;
+        }
+        
+        .content .vertical_align:nth-child(5) img {
+            vertical-align: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <p class="text_align">
+            Первая стадия ношения носков &mdash; когда носки ставят рядом с ботинками.
+        </p>
+        <p class="text_align">
+            Вторая стадия ношения носков &mdash; когда стригут ногти, не снимая носков.
+        </p>
+        <p class="text_align">
+            Третья стадия ношения носков &mdash; когда снимают носки не снимая ботинок.
+        </p>
+        <p class="text_align">
+            Чистоплотные люди не меняют носки. Им противно руками трогать грязную вещь. Им не надо их трогать, постепенно носки тихо сами истлеют и от ног отпадут. (Г.Остер)
+        </p>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="text_align">
+            <img src="img_4_20/vorobey2.jpg" alt="Воробей">
+        </div>
+        <div class="text_align">
+            <img src="img_4_20/vorobey2.jpg" alt="Воробей">
+        </div>
+        <div class="text_align">
+            <img src="img_4_20/vorobey2.jpg" alt="Воробей">
+        </div>
+    </div>
+    <hr>
+    <div class="content">
+        <div class="vertical_align">
+            <span>бу</span>
+            <img src="img_4_20/smile.gif" alt="">
+        </div>
+        <div class="vertical_align">
+            <span>бу</span>
+            <img src="img_4_20/smile.gif" alt="">
+        </div>
+        <div class="vertical_align">
+            <span>бу</span>
+            <img src="img_4_20/smile.gif" alt="">
+        </div>
+        <div class="vertical_align">
+            <span>бу</span>
+            <img src="img_4_20/smile.gif" alt="">
+        </div>
+        <div class="vertical_align">
+            <span>бу</span>
+            <img src="img_4_20/smile.gif" alt="">
+        </div>
+
+        <div class="vertical_align">
+            <img src="img_4_20/ball3.png"> бу
+            <img src="img_4_20/ball2.png" style="vertical-align: bottom;">
+        </div>
+        <div class="vertical_align">
+            <img src="img_4_20/ball3.png"> бу
+            <img src="img_4_20/ball2.png" style="vertical-align: top;">
+        </div>
+    </div>
+</body>
+
+</html>

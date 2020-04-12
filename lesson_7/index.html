@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .clearfix::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        
+        .cell {
+            height: calc(100vw/8);
+            width: calc(100vw/8);
+            outline: 1px solid black;
+        }
+        
+        .white {
+            background-color: white;
+            float: left;
+        }
+        
+        .black {
+            background-color: black;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Бубновый Валет</h1>
+    <div style="background: url(cards2.png) no-repeat 67% 69.4%; width: 143.5px; height: 193.7px;"></div>
+    <h2>Порядок</h2>
+    <div class="clearfix">
+        <div>
+            <div style="float: left;">1</div>
+            <div style="float: left;">2</div>
+            <div style="float: left;">3</div>
+        </div>
+        <div style="float:left;">
+            <div style="float: right;">1</div>
+            <div style="float: right;">2</div>
+            <div style="float: right;">3</div>
+        </div>
+    </div>
+
+</html>

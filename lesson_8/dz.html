@@ -100,7 +100,7 @@
         .pencil {
             float: left;
             height: 150px;
-            width: 30vw;
+            width: 70vmin;
             background-image: linear-gradient(to bottom, red, red 49px, yellow 50px, yellow 99px, red 100px);
         }
         
@@ -122,30 +122,94 @@
         
         .chess {
             float: left;
-            margin-top: 20px;
+            /*margin-top: 20px;
+            margin-bottom: 20px;*/
+            outline: 1px solid #ce8425;
+            position: relative;
+        }
+        
+        .chess::before {
+            content: 'abcdefgh';
+            position: absolute;
+            font-size: calc(70vmin / 16);
+            line-height: calc(70vmin / 8);
+            letter-spacing: calc(70vmin / 11.5);
+            left: calc(70vmin / -12);
+            width: calc(70vmin / 8);
+            word-wrap: break-word;
+            text-transform: uppercase;
+        }
+        
+        .chess div:nth-child(1)::after {
+            content: 'abcdefgh';
+            position: absolute;
+            font-size: calc(70vmin / 16);
+            line-height: calc(70vmin / 8);
+            letter-spacing: calc(70vmin / 11.5);
+            right: calc(70vmin / -6);
+            width: calc(70vmin / 8);
+            word-wrap: break-word;
+            text-transform: uppercase;
+        }
+        
+        .chess div:nth-child(1) {
+            position: relative;
+        }
+        
+        .chess div:nth-child(1)::before {
+            content: '12345678';
+            position: absolute;
+            font-size: calc(70vmin / 16);
+            line-height: calc(70vmin / 8);
+            letter-spacing: calc(70vmin / 11.5);
+            bottom: calc(70vmin / 8);
+            left: calc(70vmin / 16);
+        }
+        
+        .chess div:nth-child(8) {
+            position: relative;
+        }
+        
+        .chess div:nth-child(8)::after {
+            content: '12345678';
+            position: absolute;
+            font-size: calc(70vmin / 16);
+            line-height: calc(70vmin / 8);
+            letter-spacing: calc(70vmin / 11.5);
+            top: calc(70vmin / 8);
+            left: calc(70vmin / 16);
         }
         
         .chess span {
             font-family: 'ChessMedium', serif;
             font-weight: normal;
             font-style: normal;
-            font-size: calc(50vw / 8);
+            font-size: calc(70vmin / 8);
+            line-height: calc(70vmin / 8);
             color: black;
             letter-spacing: normal;
         }
         
         .chess div:nth-child(odd) {
-            width: 50vw;
-            height: calc(50vw / 8);
-            outline: 1px solid #ce8425;
-            background-image: linear-gradient(to right, #ce8425, #ce8425 calc((50vw / 8) - 1px), #fff calc(50vw / 8), #fff calc((50vw / 8 * 2) - 1px), #ce8425 calc(50vw / 8 * 2), #ce8425 calc((50vw / 8 * 3) - 1px), #fff calc(50vw / 8 * 3), #fff calc((50vw / 8 * 4) - 1px), #ce8425 calc(50vw / 8 * 4), #ce8425 calc((50vw / 8 * 5) - 1px), #fff calc(50vw / 8 * 5), #fff calc((50vw / 8 * 6) - 1px), #ce8425 calc(50vw / 8 * 6), #ce8425 calc((50vw / 8 * 7) - 1px), #fff calc(50vw / 8 * 7), #fff calc(50vw / 8 * 8));
+            width: 70vmin;
+            height: calc(70vmin / 8);
+            background-image: linear-gradient(to right, #ce8425, #ce8425 calc(70vmin / 8), #fff calc(70vmin / 8), #fff calc(70vmin / 8 * 2));
+            background-size: calc(70vmin / 4);
         }
         
         .chess div:nth-child(even) {
-            width: 50vw;
-            height: calc(50vw / 8);
-            outline: 1px solid #ce8425;
-            background-image: linear-gradient(to right, #fff, #fff calc((50vw / 8) - 1px), #ce8425 calc(50vw / 8), #ce8425 calc((50vw / 8 * 2) - 1px), #fff calc(50vw / 8 * 2), #fff calc((50vw / 8 * 3) - 1px), #ce8425 calc(50vw / 8 * 3), #ce8425 calc((50vw / 8 * 4) - 1px), #fff calc(50vw / 8 * 4), #fff calc((50vw / 8 * 5) - 1px), #ce8425 calc(50vw / 8 * 5), #ce8425 calc((50vw / 8 * 6) - 1px), #fff calc(50vw / 8 * 6), #fff calc((50vw / 8 * 7) - 1px), #ce8425 calc(50vw / 8 * 7), #ce8425 calc(50vw / 8 * 8));
+            width: 70vmin;
+            height: calc(70vmin / 8);
+            background-image: linear-gradient(to right, #fff, #fff calc(70vmin / 8), #ce8425 calc(70vmin / 8), #ce8425 calc(70vmin / 8 * 2));
+            background-size: calc(70vmin / 4);
+        }
+        
+        .board {
+            background-color: white;
+            padding: calc(70vmin / 8);
+            border-radius: 5px;
+            float: left;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -162,15 +226,17 @@
             </div>
         </div>
         <h2 class="icon-smile-o">Шахматы</h2>
-        <div class="chess">
-            <div><span>qrknplrq</span></div>
-            <div><span>qrknplrq</span></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div><span>qrknplrq</span></div>
-            <div><span>qrknplrq</span></div>
+        <div class="board">
+            <div class="chess">
+                <div><span>qrknplrq</span></div>
+                <div><span>qrknplrq</span></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><span>qrknplrq</span></div>
+                <div><span>qrknplrq</span></div>
+            </div>
         </div>
     </div>
 </body>

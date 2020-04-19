@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Исходный код для верстки шахматной доски</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body>div {
+            border: 1px solid #ce8425;
+            width: 90vmin;
+            padding: 10vmin;
+            border-radius: 2vmin;
+        }
+        
+        body>div>div {
+            width: 70vmin;
+            letter-spacing: -3vmin;
+            line-height: 0;
+        }
+        
+        body>div>div:nth-child(odd)>div:nth-child(odd) {
+            width: calc(70vmin / 8);
+            height: calc(70vmin / 8);
+            background-color: #ce8425;
+            display: inline-block;
+        }
+        
+        body>div>div:nth-child(odd)>div:nth-child(even) {
+            width: calc(70vmin / 8);
+            height: calc(70vmin / 8);
+            background-color: #f9e45f;
+            display: inline-block;
+        }
+        
+        body>div>div:nth-child(even)>div:nth-child(odd) {
+            width: calc(70vmin / 8);
+            height: calc(70vmin / 8);
+            background-color: #f9e45f;
+            display: inline-block;
+        }
+        
+        body>div>div:nth-child(even)>div:nth-child(even) {
+            width: calc(70vmin / 8);
+            height: calc(70vmin / 8);
+            background-color: #ce8425;
+            display: inline-block;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(1) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*2) - 0.3vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(2) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*4) - 1.3vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(3) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*3) - 0.8vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(4) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: 0.9vmin 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(5) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*1) + 0.4vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(6) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*3) - 0.8vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(7) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*4) - 1.3vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(8) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*2) - 0.3vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(2)>div {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*5) + -1.7vmin) 0.3vmin;
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(1) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*2) - 0.3vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(2) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*4) - 1.3vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(3) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*3) - 0.8vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(4) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: 0.9vmin calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(5) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*1) + 0.4vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(6) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*3) - 0.8vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(7) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*4) - 1.3vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(8) {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*2) - 0.3vmin) calc((-70vmin/8*1) - 0.2vmin);
+        }
+        
+        body>div>div:nth-child(7)>div {
+            background-image: url(chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(70vmin/8*6) calc(70vmin/8*2);
+            background-position: calc((-70vmin/8*5) - 1.9vmin) calc((-70vmin/8*1) - 0.7vmin);
+        }
+        
+        body>div::before {
+            content: 'abcdefgh';
+            font-size: 3vmin;
+            letter-spacing: 7.4vmin;
+            margin-left: 3.5vmin;
+            float: left;
+        }
+        
+        body>div::after {
+            content: 'abcdefgh';
+            font-size: 3vmin;
+            letter-spacing: 7.4vmin;
+            margin-left: 3.5vmin;
+            float: left;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(1):before {
+            content: '1';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(2)>div:nth-child(1):before {
+            content: '2';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(3)>div:nth-child(1):before {
+            content: '3';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(4)>div:nth-child(1):before {
+            content: '4';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(5)>div:nth-child(1):before {
+            content: '5';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(6)>div:nth-child(1):before {
+            content: '6';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(7)>div:nth-child(1):before {
+            content: '7';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(1):before {
+            content: '8';
+            font-size: 3vmin;
+            margin-left: -3.5vmin;
+            float: left;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(1)>div:nth-child(8)::after {
+            content: '1';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(2)>div:nth-child(8)::after {
+            content: '2';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(3)>div:nth-child(8)::after {
+            content: '3';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(4)>div:nth-child(8)::after {
+            content: '4';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(5)>div:nth-child(8)::after {
+            content: '5';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(6)>div:nth-child(8)::after {
+            content: '6';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(7)>div:nth-child(8)::after {
+            content: '7';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+        
+        body>div>div:nth-child(8)>div:nth-child(8)::after {
+            content: '8';
+            font-size: 3vmin;
+            margin-right: -3.5vmin;
+            float: right;
+            margin-top: 3.5vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

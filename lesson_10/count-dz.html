@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Расставить цифры</title>
+</head>
+<style>
+    body>div {
+        counter-reset: number_1 number_2 -1 number_3 1 number_4 2 number_5 4;
+    }
+    
+    body>div>div {
+        display: inline-block;
+        font-size: 14px;
+    }
+    
+    body>div:nth-child(1)>div::before {
+        counter-increment: number_1;
+        content: counter(number_1);
+        font-size: 14px;
+    }
+    /* Следующий счетчик */
+    
+    body>div:nth-child(2)>div::before {
+        counter-increment: number_2 2;
+        content: counter(number_2);
+    }
+    
+    body>div:nth-child(2)>div:nth-child(3)::before {
+        counter-increment: number_3;
+        content: counter(number_3);
+    }
+    /* Следующий счетчик */
+    
+    body>div:nth-child(3)>div::before {
+        counter-increment: number_2 2;
+        content: counter(number_2);
+    }
+    
+    body>div:nth-child(3)>div:first-child::before {
+        counter-increment: number_3;
+        content: counter(number_3);
+    }
+    /* Следующий счетчик */
+    
+    body>div:nth-child(4)>div::before {
+        counter-increment: number_3;
+        content: counter(number_3);
+    }
+    
+    body>div:nth-child(4)>div:last-child:before {
+        counter-increment: number_1;
+        content: counter(number_1);
+    }
+    /* Следующий счетчик */
+    
+    body>div:nth-child(5)>div:first-child:before {
+        counter-increment: number_4;
+        content: counter(number_4);
+    }
+    
+    body>div:nth-child(5)>div::before {
+        counter-increment: number_1;
+        content: counter(number_1);
+    }
+    /* Следующий счетчик */
+    
+    body>div:nth-child(6)>div::before {
+        counter-increment: number_5 -1;
+        content: counter(number_5);
+    }
+</style>
+
+<body>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

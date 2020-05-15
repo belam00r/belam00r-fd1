@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        .ball {
+            width: 12vw;
+            height: 12vw;
+            border-radius: 50%;
+            background-image: radial-gradient(white, red);
+            position: absolute;
+            bottom: 10vh;
+            left: 4vw;
+            animation: ball-width 7s linear infinite alternate, ball-top 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both;
+            ;
+        }
+        
+        .ball:hover {
+            animation-duration: 0s;
+        }
+        
+        .earth {
+            position: absolute;
+            bottom: 0;
+            height: 10vh;
+            width: 100vw;
+            background-color: green;
+        }
+        
+        @keyframes ball-top {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-60vh);
+            }
+        }
+        
+        @keyframes ball-width {
+            0% {
+                left: 4vw;
+            }
+            100% {
+                left: 84vw;
+            }
+        }
+    </style>
+</head>
+<div class="ball"></div>
+
+<div class="earth"></div>
+
+<body>
+
+</body>
+
+</html>

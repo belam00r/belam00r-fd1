@@ -15,3 +15,15 @@ $(document).on("click", ".brand .menu div", function() {
         // $(".brand ul").height(listItemHeight + "px");
     }
 });
+$(document).on("click", ".btn_menu", function(e) {
+    e.preventDefault;
+    $(".btn_menu").addClass("active");
+
+});
+
+
+$(document).on("click", ".btn_phone", function(e) {
+    e.preventDefault;
+    $(".btn_phone").addClass("active");
+
+});

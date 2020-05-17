@@ -17,13 +17,12 @@ $(document).on("click", ".brand .menu div", function() {
 });
 $(document).on("click", ".btn_menu", function(e) {
     e.preventDefault;
-    $(".btn_menu").addClass("active");
+    $(this).toggleClass("active");
 
 });
 
-
 $(document).on("click", ".btn_phone", function(e) {
     e.preventDefault;
-    $(".btn_phone").addClass("active");
+    $(this).toggleClass("active");
 
 });

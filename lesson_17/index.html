@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test макет</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        header {
+            height: 80px;
+            background-color: #ccc;
+        }
+        
+        footer {
+            height: 180px;
+            background-color: #ccc;
+        }
+        
+        nav {
+            background-color: #aaa;
+            flex-basis: 20%;
+        }
+        
+        article {
+            background-color: rgb(200, 248, 172);
+            /* width: 100%; */
+            flex-grow: 1;
+            padding: 10px;
+        }
+        
+        aside {
+            background-color: #aaa;
+            flex-basis: 15%;
+        }
+        
+        main {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        @media screen and (max-width: 500px) {
+            article {
+                order: 1;
+            }
+            nav {
+                order: 2;
+            }
+            aside {
+                order: 3;
+            }
+            main {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (min-width: 1000px) {
+            main {
+                flex-wrap: wrap;
+            }
+            nav {
+                flex-basis: 100%;
+            }
+            article {
+                flex-basis: 80%;
+            }
+            aside {
+                flex-basis: 20%;
+            }
+            nav>ul {
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+            }
+            nav>ul>li {}
+        }
+    </style>
+</head>
+<header>header</header>
+<main>
+    <nav>
+        <ul>
+            <li><a href="/">Пункт 1</a></li>
+            <li><a href="/">Пункт 2</a></li>
+            <li><a href="/">Пункт 3</a></li>
+            <li><a href="/">Пункт 4</a></li>
+            <li><a href="/">Пункт 5</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1>
+            Заголовок
+        </h1>
+        <p>Параграф</p>
+    </article>
+    <aside>
+        <br>
+        <br>
+        <p>Реклама на супер сайте</p>
+        <br>
+        <br>
+    </aside>
+</main>
+
+<footer>footer</footer>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            display: grid;
+            grid-template-columns: 12.07% 27.95% 1fr;
+            grid-template-rows: minmax(auto, 87px);
+            grid-column-gap: 10px;
+        }
+        
+        .header__item {
+            background-color: rgb(136, 136, 136);
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 145px 1fr;
+            grid-column-gap: 10px;
+        }
+        
+        .main__sidebar {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row-gap: 10px;
+            grid-template-rows: 270px 140px;
+            align-content: space-between;
+        }
+        
+        .main__menu,
+        .main__ads {
+            background-color: rgb(136, 136, 136);
+            padding-inline-start: 0px;
+            margin: 0;
+        }
+        
+        .main__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            grid-template-rows: 165px 1fr 170px;
+            grid-template-areas: "text text" "product product" "subtext_1 subtext_2"
+        }
+        
+        .main__text {
+            background: #ddd;
+            grid-area: text;
+        }
+        
+        .main__product {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+            list-style-type: none;
+            grid-area: product;
+            padding-inline-start: 0px;
+        }
+        
+        .main__product-item {
+            background: #ddd;
+            width: 100%;
+            height: 120px;
+        }
+        
+        .main__subtext {
+            background: #ddd;
+            height: 170px;
+            grid-area: subtext_1;
+        }
+        
+        .main__content>.main__subtext:nth-child(4) {
+            grid-area: subtext_2;
+        }
+        
+        .footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            grid-template-areas: "footer_text_1 footer_text_2 footer_text_3" "footer_text_1 footer_text_2 footer_text_4";
+        }
+        
+        .footer_text {
+            height: 130px;
+            background-color: rgb(136, 136, 136);
+        }
+        
+        .footer>.footer_text:nth-child(1) {
+            grid-area: footer_text_1;
+        }
+        
+        .footer>.footer_text:nth-child(2) {
+            grid-area: footer_text_2;
+        }
+        
+        .footer>.footer_text:nth-child(3) {
+            grid-area: footer_text_3;
+            height: 57px;
+        }
+        
+        .footer>.footer_text:nth-child(4) {
+            grid-area: footer_text_4;
+            height: 57px;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .header>.header__item:nth-child(2) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__item">1</div>
+        <div class="header__item">2</div>
+        <div class="header__item">3</div>
+    </header>
+    <hr>
+    <main class="main">
+        <aside class="main__sidebar">
+            <ul class="main__menu">4</ul>
+            <div class="main__ads">7</div>
+        </aside>
+        <section class="main__content">
+            <article class="main__text">5</article>
+            <ul class="main__product">
+                <li class="main__product-item">6</li>
+                <li class="main__product-item">6</li>
+                <li class="main__product-item">6</li>
+                <li class="main__product-item">6</li>
+                <li class="main__product-item">6</li>
+                <li class="main__product-item">6</li>
+                <li class="main__product-item">6</li>
+            </ul>
+            <div class="main__subtext">8</div>
+            <div class="main__subtext">9</div>
+        </section>
+    </main>
+    <hr>
+    <footer class="footer">
+        <div class="footer_text">10</div>
+        <div class="footer_text">11</div>
+        <div class="footer_text">12</div>
+        <div class="footer_text">13</div>
+    </footer>
+</body>
+
+</html>

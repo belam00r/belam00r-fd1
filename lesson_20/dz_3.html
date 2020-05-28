@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 150px 150px 150px;
+            grid-template-rows: repeat(6, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            grid-template-areas: "div_1_1 div_1_2 div_1_3" "div_2_1 div_2_3 div_2_2" "div_3_2 div_3_1 div_3_3" "div_4_2 div_4_3 div_4_1" "div_5_3 div_5_1 div_5_2" "div_6_3 div_6_2 div_6_1";
+        }
+        
+        @media screen and (max-width: 600px) {
+            body {
+                grid-template-columns: 50% 50%;
+                grid-template-rows: auto;
+                grid-template-areas: unset;
+            }
+            div {
+                grid-area: auto !important;
+            }
+        }
+        
+        div {
+            height: 100%;
+            width: 100%;
+            outline: 1px solid green;
+            background-color: lightgreen;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 30px 50px;
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        body>div:nth-child(1) {
+            grid-area: div_1_1;
+        }
+        
+        body>div:nth-child(2) {
+            grid-area: div_1_2;
+        }
+        
+        body>div:nth-child(3) {
+            grid-area: div_1_3;
+        }
+        
+        body>div:nth-child(4) {
+            grid-area: div_2_1;
+        }
+        
+        body>div:nth-child(5) {
+            grid-area: div_2_2;
+        }
+        
+        body>div:nth-child(6) {
+            grid-area: div_2_3;
+        }
+        
+        body>div:nth-child(7) {
+            grid-area: div_3_1;
+        }
+        
+        body>div:nth-child(8) {
+            grid-area: div_3_2;
+        }
+        
+        body>div:nth-child(9) {
+            grid-area: div_3_3;
+        }
+        
+        body>div:nth-child(10) {
+            grid-area: div_4_1;
+        }
+        
+        body>div:nth-child(11) {
+            grid-area: div_4_2;
+        }
+        
+        body>div:nth-child(12) {
+            grid-area: div_4_3;
+        }
+        
+        body>div:nth-child(13) {
+            grid-area: div_5_1;
+        }
+        
+        body>div:nth-child(14) {
+            grid-area: div_5_2;
+        }
+        
+        body>div:nth-child(15) {
+            grid-area: div_5_3;
+        }
+        
+        body>div:nth-child(16) {
+            grid-area: div_6_1;
+        }
+        
+        body>div:nth-child(17) {
+            grid-area: div_6_2;
+        }
+        
+        body>div:nth-child(18) {
+            grid-area: div_6_3;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+</body>
+
+</html>

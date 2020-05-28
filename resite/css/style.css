@@ -14,7 +14,10 @@ body {
 .container {
     max-width: 1170px;
     margin: 0 auto;
+    padding: 20px 0;
 }
+
+section {}
 
 .header_top {
     position: fixed;
@@ -182,13 +185,19 @@ body {
 
 .top {
     background: linear-gradient(to bottom, white 50%, rgb(211, 217, 238));
-    height: calc(100vh - 151px);
+    /* height: calc(100vh - 151px); */
+    min-height: 380px;
+    position: relative;
 }
 
 .top>.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-image: url(../img/santehnik.png);
+    background-size: auto calc(100vh - 240px);
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 
 .left {
@@ -211,9 +220,10 @@ body {
     padding: 10px 0;
 }
 
-.right img {
+
+/* .right img {
     max-height: calc(100vh - 151px);
-}
+} */
 
 .uslugi_section {}
 
@@ -240,7 +250,7 @@ body {
 
 .uslugi_box {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -248,7 +258,7 @@ body {
     text-align: center;
     padding: 30px 10px;
     margin: 20px 0;
-    width: 25%;
+    width: 27%;
     box-shadow: 7px 5px 30px 0 rgba(72, 73, 121, 0.15);
 }
 
@@ -371,13 +381,15 @@ footer {
         /* height: auto; */
     }
     .top>.container {
-        justify-content: space-around;
+        /* justify-content: space-around; */
+        justify-content: left;
     }
     .uslugi {
         width: 30%;
     }
     .brand {
-        justify-content: space-around;
+        /* justify-content: space-around; */
+        justify-content: space-between;
     }
 }
 
@@ -477,6 +489,7 @@ footer {
         top: 80px;
         background-color: #2c2c2c;
         color: white;
+        z-index: 1;
     }
     .header_top>.container> {
         /* height: 60vh; */

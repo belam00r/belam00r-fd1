@@ -1,0 +1,206 @@
+.first__block {
+  outline: 1px solid blue;
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.first__block.conteiner {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.first__block.title {
+  font-size: 32px;
+}
+
+.first__block.subtitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar input {
+  display: none;
+}
+
+.navbar__label {
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.navbar__label_number-1 {
+  -webkit-transform: rotate(-36deg);
+          transform: rotate(-36deg);
+}
+
+.navbar__label_number-2 {
+  -webkit-transform: rotate(-72deg);
+          transform: rotate(-72deg);
+}
+
+.navbar__label_number-3 {
+  -webkit-transform: rotate(-108deg);
+          transform: rotate(-108deg);
+}
+
+.navbar__label_number-4 {
+  -webkit-transform: rotate(-144deg);
+          transform: rotate(-144deg);
+}
+
+.navbar__label_number-5 {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.navbar__label_number-6 {
+  -webkit-transform: rotate(-216deg);
+          transform: rotate(-216deg);
+}
+
+.navbar__label_number-7 {
+  -webkit-transform: rotate(-252deg);
+          transform: rotate(-252deg);
+}
+
+.navbar__label_number-8 {
+  -webkit-transform: rotate(-288deg);
+          transform: rotate(-288deg);
+}
+
+.navbar__label_number-9 {
+  -webkit-transform: rotate(-324deg);
+          transform: rotate(-324deg);
+}
+
+.navbar__label_number-10 {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+.navbar input[id="navbar-radio-1"]:checked ~ div > label[for="navbar-radio-1"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-2"]:checked ~ div > label[for="navbar-radio-2"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-3"]:checked ~ div > label[for="navbar-radio-3"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-4"]:checked ~ div > label[for="navbar-radio-4"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-5"]:checked ~ div > label[for="navbar-radio-5"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-6"]:checked ~ div > label[for="navbar-radio-6"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-7"]:checked ~ div > label[for="navbar-radio-7"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-8"]:checked ~ div > label[for="navbar-radio-8"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-9"]:checked ~ div > label[for="navbar-radio-9"] {
+  background-color: blue;
+}
+
+.navbar input[id="navbar-radio-10"]:checked ~ div > label[for="navbar-radio-10"] {
+  background-color: blue;
+}
+
+.navbar__title {
+  font-size: 25px;
+  text-align: center;
+}
+
+.navbar__item {
+  position: absolute;
+  top: 130px;
+  -webkit-transition: 2s;
+  transition: 2s;
+  -webkit-transform-origin: 200px 200px;
+          transform-origin: 200px 200px;
+}
+
+.navbar__item_round {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.navbar__item_number-1 {
+  -webkit-transform: rotate(36deg);
+          transform: rotate(36deg);
+}
+
+.navbar__item_number-2 {
+  -webkit-transform: rotate(72deg);
+          transform: rotate(72deg);
+}
+
+.navbar__item_number-3 {
+  -webkit-transform: rotate(108deg);
+          transform: rotate(108deg);
+}
+
+.navbar__item_number-4 {
+  -webkit-transform: rotate(144deg);
+          transform: rotate(144deg);
+}
+
+.navbar__item_number-5 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.navbar__item_number-6 {
+  -webkit-transform: rotate(216deg);
+          transform: rotate(216deg);
+}
+
+.navbar__item_number-7 {
+  -webkit-transform: rotate(252deg);
+          transform: rotate(252deg);
+}
+
+.navbar__item_number-8 {
+  -webkit-transform: rotate(288deg);
+          transform: rotate(288deg);
+}
+
+.navbar__item_number-9 {
+  -webkit-transform: rotate(324deg);
+          transform: rotate(324deg);
+}
+
+.navbar__item_number-10 {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+/*# sourceMappingURL=style.css.map */

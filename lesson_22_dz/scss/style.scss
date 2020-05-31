@@ -1,0 +1,124 @@
+$chessitem: 8;
+$blockSize: 10vmin;
+$chessImg: url(../../../img/chess.png);
+$chessImgPositionX: $blockSize / 10;
+$chessImgPositionY:$blockSize / 20;
+$fontColor: rgb(29, 29, 29);
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: $fontColor;
+}
+
+.conteiner {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.chess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    &__title {
+        font-size: $blockSize;
+        font-weight: 600;
+    }
+    &__box {
+        outline: 1px solid brown;
+        background-color: chocolate;
+        width: $blockSize * 8;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: $blockSize;
+        position: relative;
+        &::before {
+            content: "abcdfjhg";
+            position: absolute;
+            font-size: $blockSize / 2;
+            line-height: $blockSize;
+            letter-spacing: $blockSize / 1.3;
+            top: $blockSize * -1;
+            left: $blockSize / 2.2;
+        }
+        &::after {
+            content: "abcdfjhg";
+            position: absolute;
+            font-size: $blockSize / 2;
+            line-height: $blockSize;
+            letter-spacing: $blockSize / 1.3;
+            bottom: $blockSize * -1;
+            left: $blockSize / 2.2;
+        }
+    }
+    &__row {
+        position: relative;
+        display: flex;
+        text-align: center;
+        @for $i from 1 through $chessitem {
+            &:nth-child(#{$i})::before {
+                content: "#{$i}";
+                position: absolute;
+                left: $blockSize * -1;
+                font-size: $blockSize / 2;
+                line-height: $blockSize;
+            }
+            &:nth-child(#{$i})::after {
+                content: "#{$i}";
+                position: absolute;
+                right: $blockSize * -1;
+                font-size: $blockSize / 2;
+                line-height: $blockSize;
+            }
+        }
+        &:nth-child(1)>div,
+        &:nth-child(2)>div,
+        &:nth-child(7)>div {
+            background-image: $chessImg;
+            background-size: $blockSize * 6;
+            background-repeat: no-repeat;
+            background-position: $chessImgPositionX $chessImgPositionY;
+        }
+        &:nth-child(8)>div {
+            background-image: $chessImg;
+            background-size: $blockSize * 6;
+            background-repeat: no-repeat;
+            background-position: $chessImgPositionX $chessImgPositionY - $blockSize;
+        }
+    }
+    &__block {
+        width: $blockSize;
+        height: $blockSize;
+        @for $i from 1 through 6 {
+            .chess__row:nth-child(1)>&:nth-child(#{$i + 1}) {
+                background-position: ($chessImgPositionX - (($chessImgPositionX / 2 + $blockSize) * $i)) $chessImgPositionY;
+            }
+        }
+        .chess__row:nth-child(1)>&:nth-child(7) {
+            background-position: ($chessImgPositionX - (($chessImgPositionX / 2 + $blockSize) * 2)) $chessImgPositionY;
+        }
+        .chess__row:nth-child(2)>& {
+            background-position: ($chessImgPositionX - (($chessImgPositionX / 2 + $blockSize) * 5)) $chessImgPositionY;
+        }
+        @for $i from 1 through 6 {
+            .chess__row:nth-child(8)>&:nth-child(#{$i + 1}) {
+                background-position: ($chessImgPositionX - (($chessImgPositionX / 2 + $blockSize) * $i)) $chessImgPositionY - $blockSize;
+            }
+        }
+        .chess__row:nth-child(8)>&:nth-child(7) {
+            background-position: ($chessImgPositionX - (($chessImgPositionX / 2 + $blockSize) * 2)) $chessImgPositionY - $blockSize;
+        }
+        .chess__row:nth-child(7)>& {
+            background-position: ($chessImgPositionX - (($chessImgPositionX / 2 + $blockSize) * 5)) $chessImgPositionY - $blockSize;
+        }
+    }
+    &__row:nth-child(odd)>&__block:nth-child(odd) {
+        background-color: yellow;
+    }
+    &__row:nth-child(even)>&__block:nth-child(even) {
+        background-color: yellow;
+    }
+}

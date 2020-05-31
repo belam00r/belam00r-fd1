@@ -1,0 +1,78 @@
+$blockColor: #666;
+$titlefs: 32px;
+$subtitlefs:18px;
+.first__block {
+    outline: 1px solid blue;
+    text-align: center;
+    color: $blockColor;
+    margin-bottom: 20px;
+    &.conteiner {
+        width: 1170px;
+        margin: 0 auto;
+    }
+    &.title {
+        font-size: $titlefs;
+    }
+    &.subtitle {
+        font-size: $subtitlefs;
+        font-weight: 600;
+    }
+}
+
+$navItems:10;
+$navItemsWidth: 100px;
+$navItemsHeight: 100px;
+$navItemsBorderRadius: 50%;
+$navItemsBgColor: #ccc;
+$navItemsTransformOriginX: 200px;
+$navItemsTransformOriginY: 200px;
+.navbar {
+    // outline: 1px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    input {
+        display: none;
+    }
+    &__label {
+        display: block;
+        width: $navItemsWidth;
+        height: $navItemsHeight;
+        line-height: $navItemsHeight;
+        text-align: center;
+        @for $i from 1 through $navItems {
+            &_number-#{$i} {
+                transform: rotate($i * -360deg / $navItems);
+            }
+        }
+    }
+    @for $i from 1 through $navItems {
+        input[id="navbar-radio-#{$i}"]:checked~div>label[for="navbar-radio-#{$i}"] {
+            background-color: blue;
+        }
+    }
+    &__title {
+        font-size: 25px;
+        text-align: center;
+    }
+    &__item {
+        // outline: 1px solid red;
+        position: absolute;
+        // left: 100px;
+        top: 130px;
+        transition: 2s;
+        transform-origin: $navItemsTransformOriginX $navItemsTransformOriginY;
+        &_round {
+            width: $navItemsWidth;
+            height: $navItemsHeight;
+            border-radius: $navItemsBorderRadius;
+            background-color: $navItemsBgColor;
+            transform: rotate(0deg);
+        }
+        @for $i from 1 through $navItems {
+            &_number-#{$i} {
+                transform: rotate($i * 360deg / $navItems);
+            }
+        }
+    }
+}

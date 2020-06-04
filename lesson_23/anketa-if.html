@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var name = prompt('Введите Ваше Имя', 'Владимир?');
+        var nameSurName = prompt('Введите Вашу Фамилию', 'Кукарекин?');
+        var nameYourFather = prompt('Введите Ваше Отчество', 'Сергеевич?');
+        var ageYear = parseInt(prompt('Введите Ваш возраст', '28'));
+        // var sexPrompt = prompt('Введите ваш пол, м или ж');
+        var sexConfirm = confirm('Нажмите OK если ваш мол мужской или ОТМЕНА если женский')
+        console.log(sexConfirm);
+        var sex;
+        // if (sexPrompt == 'м') { // Сразу сделал через Promt
+        //     sex = 'Мужчина';
+        // } else {
+        //     sex = 'Женщина';
+        // }
+        if (sexConfirm == true) {
+            sex = 'Мужчина';
+        } else {
+            sex = 'Женщина';
+        }
+        var ageDayVisokosnyi = parseInt(ageYear / 4); //Считаем дополнительные высокосные дни
+        console.log(ageDayVisokosnyi);
+
+        var ageDay = ageYear * 365 + ageDayVisokosnyi;
+        var pension;
+        if (ageYear >= 55 && sex == 'Мужчина') { //Мужчины идут на пенсию раньше
+            var pension = "Да";
+        } else if (ageYear >= 60) {
+            var pension = "Да";
+        } else {
+            var pension = "Нет";
+        }
+        alert(`Ваше ФИО: ${name} ${nameSurName} ${nameYourFather}\n` +
+            `Ваш возвраст в годах: ${ageYear}\n` +
+            `Ваш возраст в днях: ${ageDay}\n` +
+            `Через 5 лет вам будет: ${ageYear + 5}\n` +
+            `Ваш пол: ${sex}\n` +
+            `Вы на пенсии: ${pension}`)
+    </script>
+</body>
+
+</html>

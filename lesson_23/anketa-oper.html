@@ -13,21 +13,9 @@
         var nameSurName = prompt('Введите Вашу Фамилию', 'Кукарекин?');
         var nameYourFather = prompt('Введите Ваше Отчество', 'Сергеевич?');
         var ageYear = parseInt(prompt('Введите Ваш возраст', '28'));
-        // var sexPrompt = prompt('Введите ваш пол, м или ж');
         var sexConfirm = confirm('Нажмите OK если ваш мол мужской или ОТМЕНА если женский')
         console.log(sexConfirm);
-        var sex;
-        // if (sexPrompt == 'м') { // Сразу сделал через Promt
-        //     sex = 'Мужчина';
-        // } else {
-        //     sex = 'Женщина';
-        // }
-        // if (sexConfirm == true) {
-        //     sex = 'Мужчина';
-        // } else {
-        //     sex = 'Женщина';
-        // }
-        sex = (sexConfirm == true) ? 'Мужчина' : 'Женщина';
+        var sex = (sexConfirm == true) ? 'Мужчина' : 'Женщина'; // a?b:b;
         var ageDayVisokosnyi = parseInt(ageYear / 4); //Считаем дополнительные высокосные дни
         console.log(ageDayVisokosnyi);
 

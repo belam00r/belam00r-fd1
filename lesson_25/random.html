@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var country = []; //объявили массив
+        var summSquare;
+        const minTeritory = 20;
+        const maxPopulation = 100;
+
+
+        // Функция ввода
+        function addCountry() {
+            var country = prompt("Введите название Государства")
+            var capital = prompt("Введите название Столицы")
+            var territory = Number(prompt("Введите площать"))
+            var population = Number(prompt("Введите численность населения"))
+                //возвращаем ХЭШ {country = введенное имя}
+            return {
+                country,
+                capital,
+                territory,
+                population
+            }
+        }
+
+        //Функция вывода страны с территорией больше чем minTeritory
+        function minTeritoryF(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].territory > minTeritory) {
+                    console.log(`Страна ${arr[i].country} имеет территорию ${arr[i].territory}`)
+                }
+            }
+        }
+        //Функция вывода страны с населением меньше чем больше чем maxPopulation
+        function maxPopulationF(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].population < maxPopulation) {
+                    console.log(`Страна ${arr[i].country} имеет населения ${arr[i].population}`)
+                }
+            }
+        }
+
+        //функция подсчета суммарной площади
+        function summSize(arr) {
+            var summ = 0;
+            if (confirm("Посчитаем суммарную площадь?")) {
+                for (var i = 0; i < arr.length; i++) {
+                    summ += arr[i].territory;
+                }
+            }
+            console.log(`Суммарная площадь всех стран ${summ}`)
+            return summ;
+        }
+        //Вызываем функциии
+        //С помощью цикла do while и созданной функции добавляем Хэши в ячейки массива
+        do {
+            country[country.length] = addCountry(); // country[country.length] - Магия. Работает, тк ячейка с индексом 0 имеет длинну 1.
+
+            if (confirm("Записываем дальше?")) { // работает пока условие true, confirm возвращает true или false
+            } else {
+                break
+            }
+        }
+        while (true)
+        console.log(country)
+        summSize(country);
+        minTeritoryF(country)
+        maxPopulationF(country)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

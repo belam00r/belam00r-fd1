@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица</title>
+    <script>
+        var countryInfo = [];
+        const maxPopulation = 10000;
+        const minTerritory = 150000;
+
+        function promtCountry(arr) {
+            var summSquare = 0;
+            while (confirm("Введите страну")) {
+                var nameCountry = prompt("Введите название страны");
+                var capital = prompt("Введите название Столицы");
+                var population = parseInt(prompt("Введите численность населения"));
+                var square = parseInt(prompt("Введите площадь страны"));
+                var density = square / population;
+                arr[arr.length] = {
+                    country: nameCountry,
+                    capital: capital,
+                    population: population,
+                    square: square,
+                    density: density
+                }
+            }
+            console.log(arr);
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].square > minTerritory) {
+                    console.log(`Страна ${arr[i].country} имеет территорию больше чем ${minTerritory}`)
+                }
+                if (arr[i].population > maxPopulation) {
+                    console.log(`Страна ${arr[i].country} имеет население больше чем ${maxPopulation}`)
+                }
+                summSquare += arr[i].square;
+            }
+            console.log(`Суммарная площадь всех стран ${summSquare}`)
+            return arr;
+        }
+        promtCountry(countryInfo);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

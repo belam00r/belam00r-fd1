@@ -115,22 +115,24 @@
         var inputPositionYnew;
         // console.log(startGame);
         while (startGame !== false) {
-            inputPositionX = positionX();
-            inputPositionY = positionY();
-            if (chessTable[inputPositionX][inputPositionY].figure.rank == undefined) {
+
+            while (chessTable[inputPositionX][inputPositionY].figure.rank == undefined) {
+                inputPositionX = positionX();
+                inputPositionY = positionY();
                 console.log("Фигура не найдена")
                 alert("тут пусто, введите другие значения");
                 inputPositionX = positionX();
                 inputPositionY = positionY();
-            } else {
-                console.log("Фигуру нашли")
-                alert("Выберите куда перемещаем фигуру");
-                inputPositionXnew = positionX();
-                inputPositionYnew = positionY();
-                chessTable[inputPositionXnew][inputPositionYnew].figure.rank = chessTable[inputPositionX][inputPositionY].figure.rank
-                delete(chessTable[inputPositionX][inputPositionY].figure);
-                console.log(chessTable);
-            }
+            )
+
+            console.log("Фигуру нашли")
+            alert("Выберите куда перемещаем фигуру");
+            inputPositionXnew = positionX();
+            inputPositionYnew = positionY();
+            chessTable[inputPositionXnew][inputPositionYnew].figure.rank = chessTable[inputPositionX][inputPositionY].figure.rank
+            delete(chessTable[inputPositionX][inputPositionY].figure);
+            console.log(chessTable);
+
             startGame = confirm("Я хочу играть еще?");
             console.log(startGame)
         }

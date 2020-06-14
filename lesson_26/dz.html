@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание</title>
+    <style>
+        @font-face {
+            font-family: 'ChessMedium';
+            src: url('fonts/Chess.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body {
+            background: linear-gradient(rgb(255, 255, 255), rgb(154, 187, 240));
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .conteiner {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .board {
+            /* width: 50vw;
+            height: 50vw; */
+            /* outline: 1px solid black; */
+            border-radius: 3px;
+        }
+        
+        .board>div {
+            width: 50vw;
+            display: flex;
+        }
+        
+        .chess {
+            font-family: 'ChessMedium', serif;
+            font-weight: normal;
+            font-style: normal;
+            font-size: calc(50vw/8);
+            line-height: calc(50vw/8);
+            color: black;
+            letter-spacing: normal;
+            height: calc(50vw/8);
+            width: calc(50vw/8);
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        
+        .chess:hover {
+            border-color: rgba(35, 212, 35, 0.801);
+            background-color: rgba(66, 126, 66, 0.801);
+        }
+        
+        .remove {
+            border-color: rgba(255, 8, 0, 0.801);
+            background-color: rgba(216, 68, 68, 0.801);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="conteiner">
+        <div class="board">
+            <div>
+                <div class="chess">q</div>
+                <div class="chess">r</div>
+                <div class="chess">k</div>
+                <div class="chess">p</div>
+                <div class="chess">n</div>
+                <div class="chess">l</div>
+                <div class="chess">r</div>
+                <div class="chess">q</div>
+            </div>
+            <div>
+                <div class="chess">q</div>
+                <div class="chess">r</div>
+                <div class="chess">k</div>
+                <div class="chess">p</div>
+                <div class="chess">n</div>
+                <div class="chess">l</div>
+                <div class="chess">r</div>
+                <div class="chess">q</div>
+            </div>
+            <div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+            </div>
+            <div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+            </div>
+            <div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+            </div>
+            <div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+                <div class="chess"></div>
+            </div>
+            <div>
+                <div class="chess">q</div>
+                <div class="chess">r</div>
+                <div class="chess">k</div>
+                <div class="chess">p</div>
+                <div class="chess">n</div>
+                <div class="chess">l</div>
+                <div class="chess">r</div>
+                <div class="chess">q</div>
+            </div>
+            <div>
+                <div class="chess">q</div>
+                <div class="chess">r</div>
+                <div class="chess">k</div>
+                <div class="chess">p</div>
+                <div class="chess">n</div>
+                <div class="chess">l</div>
+                <div class="chess">r</div>
+                <div class="chess">q</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var itemPosition;
+        var newPosition = null;
+        var temp = null;
+        itemPosition = document.getElementsByClassName("chess");
+        console.log(itemPosition);
+
+        for (var i = 0; i < itemPosition.length; i++) {
+            itemPosition[i].addEventListener("click", move)
+        }
+
+        function move(e) {
+            console.log("privet")
+            if (newPosition === null) {
+                newPosition = e.target.innerHTML;
+                e.target.innerHTML = "";
+                this.classList.add("remove")
+                temp = this;
+            } else {
+                e.target.innerHTML = newPosition;
+                newPosition = null;
+                temp.classList.remove("remove")
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

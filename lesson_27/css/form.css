@@ -11,8 +11,17 @@ h2 {
     font-size: 18px;
 }
 
+button {
+    padding: 5px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
 .table {
     border: 1px solid black;
+    display: none;
+    margin-top: 20px;
+    background-color: #fff;
 }
 
 th,

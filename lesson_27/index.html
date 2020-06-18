@@ -18,8 +18,8 @@
     <div class="conteiner">
         <h1>Форма</h1>
         <form action="http://109.235.69.203:8080/data/1009" method="POST">
-            <div><label>Введите ФИО:<input type="text" name="name"></label></div>
-            <div><label>Дата сдачи экзамена:<input type="text" name="date"></label></div>
+            <div><label>Введите ФИО:<div><input type="text" name="name"></div></label></div>
+            <div><label>Дата сдачи экзамена:<div><input type="text" name="date"></div></label></div>
             <div>
                 <p>Марка машины, за которой закреплены:</p>
                 <select name="car">
@@ -36,7 +36,11 @@
             </select>
             </div>
             <button>Отправить</button>
-            <h2>Таблица успеха и неуспеха</h2>
+
+        </form>
+        <h2>Таблица успеха и неуспеха</h2>
+        <div>
+            <button class="result-table">Показать результаты</button>
             <table class="table">
                 <tr>
                     <th>ФИО</th>
@@ -46,7 +50,7 @@
                 </tr>
 
             </table>
-        </form>
+        </div>
         <h2>NinoSlider</h2>
         <div id="wrapper">
             <div class="slider-wrapper theme-default">
